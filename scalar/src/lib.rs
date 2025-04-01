@@ -10,6 +10,10 @@ pub fn pro(a: i32, b: i32) -> i32 {
     a * b
 }
 
+pub fn quo(a: i32, b: i32) -> i32 {
+    a / b
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -24,5 +28,8 @@ mod tests {
 
         let pro_result = pro(2, 2);
         assert_eq!(pro_result, 4);
+
+        let quo_result = quo(2, 2);
+        assert_eq!(quo_result, 1);
     }
 }
