@@ -1,5 +1,5 @@
-pub fn sum(a: i32, b: i32) -> i32 {
-    if a < 0 || b > 255 {
+pub fn sum(a: u32, b: u32) -> u32 {
+    if a < 1 || b > 255 {
         panic!("Overflow");
     }
 
