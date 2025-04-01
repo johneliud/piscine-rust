@@ -1,13 +1,25 @@
 pub fn sum(a: i32, b: i32) -> i32 {
-    a + b
+    if a < 0 || b > 255 {
+        panic!("Overflow");
+    }
+
+    return a + b;
 }
 
 pub fn diff(a: i32, b: i32) -> i32 {
-    a - b
+    if a < -32767 || b > 32767 {
+        panic!("Overflow");
+    }
+
+    return a - b;
 }
 
 pub fn pro(a: i32, b: i32) -> i32 {
-    a * b
+    if a < -128 || b > 127 {
+        panic!("Overflow");
+    }
+
+    return a * b;
 }
 
 pub fn quo(a: f32, b: f32) -> f32 {
