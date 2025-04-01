@@ -12,7 +12,10 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let result = sum(2, 2);
-        assert_eq!(result, 4);
+        let sum_result = sum(2, 2);
+        assert_eq!(sum_result, 4);
+
+        let diff_result = diff(2,2);
+        assert_eq!(diff_result, 0);
     }
 }
