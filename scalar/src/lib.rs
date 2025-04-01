@@ -14,6 +14,10 @@ pub fn quo(a: i32, b: i32) -> i32 {
     a / b
 }
 
+pub fn rem(a: i32, b: i32) -> i32 {
+    a % b
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -31,5 +35,8 @@ mod tests {
 
         let quo_result = quo(2, 2);
         assert_eq!(quo_result, 1);
+
+        let rem_result = rem(2, 2);
+        assert_eq!(rem_result, 0);
     }
 }
