@@ -18,7 +18,7 @@ fn main() {
         tries += 1;
 
         if trimmed_answer == "The letter e" {
-            println!("It took you {} tries.", tries);
+            println!("Number of trials: {}", tries);
             break;
         }
     }
