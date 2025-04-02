@@ -18,10 +18,8 @@ fn main() {
         tries += 1;
 
         if trimmed_answer == "e" {
-            println!("You are correct! It took you {} tries.", tries);
+            println!("It took you {} tries.", tries);
             break;
-        } else {
-            println!("You are incorrect!");
         }
     }
 }
