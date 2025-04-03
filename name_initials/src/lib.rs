@@ -6,9 +6,9 @@ pub fn initials(names: Vec<&str>) -> Vec<String> {
         let mut initial = String::new();
 
         for word in split {
-            initial.push_str(&word[..1].to_uppercase());
+            initial.push_str(&format!("{}. ", &word[..1].to_uppercase()));
         }
-        initials.push(initial);
+        initials.push(initial.trim_end().to_string());
     }
     initials
 }
