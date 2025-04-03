@@ -10,17 +10,13 @@ pub fn str_function(a: String) -> Result<(String, String), String> {
         Err(_) => Err(format!("Failed to parse '{}' as a float", a)),
     }
 }
-
 pub fn vec_function(b: Vec<i32>) -> (Vec<i32>, Vec<f64>) {
-    let mut c = Vec::new();
-    let mut d = Vec::new();
-    for &x in b.iter() {
-        c.push(x);
-        if x > 0 {
-            d.push((x as f64).ln());
-        } else {
-            d.push(0.0);
-        }
-    }
-    (c, d)
+    let res = b
+        .iter()
+        .map(|&r| {
+            let value = (r.abs() as f64).ln();
+            value
+        })
+        .collect();
+    (b, res)
 }
