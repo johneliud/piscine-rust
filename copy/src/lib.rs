@@ -16,7 +16,11 @@ pub fn vec_function(b: Vec<i32>) -> (Vec<i32>, Vec<f64>) {
     let mut d = Vec::new();
     for &x in b.iter() {
         c.push(x);
-        d.push((x as f64).ln());
+        if x > 0 {
+            d.push((x as f64).ln());
+        } else {
+            d.push(0.0);
+        }
     }
     (c, d)
 }
