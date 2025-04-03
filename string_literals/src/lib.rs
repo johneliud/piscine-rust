@@ -10,6 +10,10 @@ pub fn contains(v: &str, pat: &str) -> bool {
     v.contains(pat)
 }
 
+pub fn split_at(v: &str, index: usize) -> (&str, &str) {
+    v.split_at(index)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
