@@ -21,15 +21,9 @@ pub fn str_function(a: String) -> (String, String) {
 }
 
 pub fn vec_function(b: Vec<i32>) -> (Vec<i32>, Vec<f64>) {
-    let mut c = Vec::new();
-    let mut d = Vec::new();
-    for &x in b.iter() {
-        c.push(x);
-        if x > 0 {
-            d.push((x as f64).ln());
-        } else {
-            d.push(0.0);
-        }
-    }
-    (c, d)
+    let log_values: Vec<f64> = b
+        .iter()
+        .map(|&num| (num.abs() as f64).ln())
+        .collect();
+    (b, log_values)
 }
