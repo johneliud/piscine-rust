@@ -6,6 +6,10 @@ pub fn is_ascii(v: &str) -> bool {
     v.chars().all(|c| c.is_ascii())
 }
 
+pub fn contains(v: &str, pat: &str) -> bool {
+    v.contains(pat)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
