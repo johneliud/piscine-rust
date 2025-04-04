@@ -24,3 +24,19 @@ pub fn delete_and_backspace(s: &mut String) {
     }
     *s = result;
 }
+
+pub fn do_operations(v: &mut [String]) {
+    for s in v.iter_mut() {
+        if let Some(op_pos) = s.find(|c: char| c == '+' || c == '-') {
+            let (left, right) = s.split_at(op_pos);
+            let left_num = left.trim().parse::<i32>().unwrap_or(0);
+            let right_num = right[1..].trim().parse::<i32>().unwrap_or(0);
+
+            *s = match s.chars().nth(op_pos) {
+                Some('+') => (left_num + right_num).to_string(),
+                Some('-') => (left_num - right_num).to_string(),
+                _ => s.clone(),
+            };
+        }
+    }
+}
