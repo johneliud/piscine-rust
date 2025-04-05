@@ -5,17 +5,20 @@ pub fn capitalize_first(input: &str) -> String {
 }
 
 pub fn title_case(input: &str) -> String {
-    input
-        .split_whitespace()
-        .map(|word| {
-            let mut chars = word.chars();
-            match chars.next() {
-                Some(first) => first.to_uppercase().collect::<String>() + chars.as_str(),
-                None => String::new(),
-            }
-        })
-        .collect::<Vec<_>>()
-        .join(" ")
+    let mut result = String::new();
+    let mut new_word = true;
+    for c in input.chars() {
+        if c.is_whitespace() {
+            result.push(c);
+            new_word = true;
+        } else if new_word {
+            result.push(c.to_ascii_uppercase());
+            new_word = false;
+        } else {
+            result.push(c.to_ascii_lowercase());
+        }
+    }
+    result
 }
 
 pub fn change_case(input: &str) -> String {
