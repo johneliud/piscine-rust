@@ -1,7 +1,15 @@
 pub fn capitalize_first(input: &str) -> String {
-    let mut chars = input.chars();
-    let first_char = chars.next().unwrap().to_uppercase().to_string();
-    first_char + chars.as_str()
+    if let Some(first) = input.chars().next() {
+        let c = first.to_ascii_uppercase().to_string();
+        let r = input
+            .chars()
+            .skip(1)
+            .collect::<String>()
+            .to_ascii_lowercase();
+        format!("{}{}", c, r)
+    } else {
+        String::new()
+    }
 }
 
 pub fn title_case(input: &str) -> String {
