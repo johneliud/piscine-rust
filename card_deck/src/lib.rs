@@ -1,3 +1,5 @@
+use rand::Rng;
+
 #[derive(Debug, PartialEq, Copy, Clone)]
 pub enum Suit {
     Heart,
