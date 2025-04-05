@@ -7,3 +7,7 @@ pub fn word_frequency_counter<'a>(words: &'a [&'a str]) -> HashMap<&'a str, usiz
     }
     res
 }
+
+pub fn nb_distinct_words(frequency_count: &HashMap<&str, usize>) -> usize {
+    frequency_count.len()
+}
