@@ -25,12 +25,11 @@ pub fn change_case(input: &str) -> String {
     input
         .chars()
         .map(|c| {
-            if c.is_lowercase() {
-                c.to_uppercase().to_string()
+            if c.is_ascii_uppercase() {
+                c.to_ascii_lowercase()
             } else {
-                c.to_lowercase().to_string()
+                c.to_ascii_uppercase()
             }
         })
-        .collect::<Vec<_>>()
-        .join("")
+        .collect()
 }
