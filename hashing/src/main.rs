@@ -12,3 +12,19 @@ pub fn median(list: &[i32]) -> i32 {
         l[mid]
     }
 }
+
+pub fn mode(list: &[i32]) -> i32 {
+    let mut res = HashMap::new();
+    for &value in list {
+        *res.entry(value).or_insert(0) += 1;
+    }
+    let mut prev = 0;
+    let mut repeated = 0;
+    for (&key, &value) in res.iter() {
+        if value > prev {
+            repeated = key;
+            prev = value;
+        }
+    }
+    repeated
+}
