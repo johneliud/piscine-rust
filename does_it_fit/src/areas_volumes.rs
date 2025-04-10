@@ -35,3 +35,7 @@ pub fn cube_volume(side: usize) -> usize {
 pub fn sphere_volume(radius: usize) -> f64 {
     (4.0 / 3.0) * std::f64::consts::PI * (radius.pow(3) as f64)
 }
+
+pub fn triangular_pyramid_volume(base_area: f64, height: usize) -> f64 {
+    (base_area * height as f64) / 3.0
+}
