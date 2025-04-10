@@ -35,3 +35,15 @@ pub fn highest_paid_employee(mall: mall::Mall) -> Vec<employee::Employee> {
 
     res
 }
+
+pub fn nbr_of_employees(mall: mall::Mall) -> usize {
+    let mut res = 0;
+
+    for floor_a in mall.floors.iter() {
+        for shop in floor_a.stores.iter() {
+            res += shop.employees.len();
+        }
+    }
+
+    res + mall.guards.len()
+}
