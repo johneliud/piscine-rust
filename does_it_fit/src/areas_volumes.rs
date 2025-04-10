@@ -31,3 +31,7 @@ pub fn rectangle_area(side_a: usize, side_b: usize) -> usize {
 pub fn cube_volume(side: usize) -> usize {
     side.pow(3)
 }
+
+pub fn sphere_volume(radius: usize) -> f64 {
+    (4.0 / 3.0) * std::f64::consts::PI * (radius.pow(3) as f64)
+}
