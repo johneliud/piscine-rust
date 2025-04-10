@@ -16,3 +16,6 @@ pub enum GeometricalVolumes {
 pub fn square_area(side: usize) -> usize {
     side.pow(2)
 }
+pub fn triangle_area(base: usize, height: usize) -> f64 {
+    (base as f64 * height as f64) / 2.0
+}
