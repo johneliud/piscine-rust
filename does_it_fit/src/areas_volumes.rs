@@ -23,3 +23,7 @@ pub fn triangle_area(base: usize, height: usize) -> f64 {
 pub fn circle_area(radius: usize) -> f64 {
     std::f64::consts::PI * (radius.pow(2) as f64)
 }
+
+pub fn rectangle_area(side_a: usize, side_b: usize) -> usize {
+    side_a * side_b
+}
