@@ -27,3 +27,7 @@ pub fn circle_area(radius: usize) -> f64 {
 pub fn rectangle_area(side_a: usize, side_b: usize) -> usize {
     side_a * side_b
 }
+
+pub fn cube_volume(side: usize) -> usize {
+    side.pow(3)
+}
