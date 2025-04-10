@@ -61,3 +61,17 @@ pub fn check_for_securities(mall: &mut mall::Mall, available_sec: Vec<guard::Gua
         i += 1;
     }
 }
+
+pub fn cut_or_raise(mall: &mut mall::Mall) {
+    for (i, elem) in mall.clone().floors.iter().enumerate() {
+        for (j, shop) in elem.stores.iter().enumerate() {
+            for (z, emp) in shop.employees.iter().enumerate() {
+                if emp.working_hours.1 - emp.working_hours.0 >= 10 {
+                    mall.floors[i].stores[j].employees[z].raise(emp.salary * 0.1);
+                } else {
+                    mall.floors[i].stores[j].employees[z].cut(emp.salary * 0.1);
+                }
+            }
+        }
+    }
+}
