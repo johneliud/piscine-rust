@@ -17,3 +17,21 @@ pub fn biggest_store(mall: mall::Mall) -> store::Store {
 
     res
 }
+
+pub fn highest_paid_employee(mall: mall::Mall) -> Vec<employee::Employee> {
+    let mut res = vec![employee::Employee::new("", 0, 0, 0, 0.0)];
+
+    for elem in mall.floors.iter() {
+        for shop in elem.stores.iter() {
+            for emp in shop.employees.clone().into_iter() {
+                if emp.salary > res[0].salary {
+                    res[0] = emp.clone();
+                } else if emp.salary == res[0].salary {
+                    res.push(emp.clone());
+                }
+            }
+        }
+    }
+
+    res
+}
