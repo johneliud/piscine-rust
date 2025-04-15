@@ -9,3 +9,16 @@ pub fn talking(text: &str) -> &str {
         _ => "Interesting",
     }
 }
+
+fn is_yelling(text: &str) -> bool {
+    let letters: String = text.chars().filter(|ch| ch.is_alphabetic()).collect();
+    !letters.is_empty() && letters.chars().all(|c| c.is_uppercase())
+}
+
+fn is_question(text: &str) -> bool {
+    text.ends_with('?')
+}
+
+fn is_yelling_question(text: &str) -> bool {
+    is_yelling(text) && is_question(text)
+}
