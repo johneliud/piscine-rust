@@ -1,4 +1,3 @@
-use case::CaseExt;
 use edit_distance::edit_distance;
 
 pub fn expected_variable(original: &str, expected: &str) -> Option<String> {
