@@ -13,3 +13,14 @@ pub fn get_diamond(c: char) -> Vec<String> {
 
     diamond
 }
+
+fn build_line(i: usize, width: usize) -> String {
+    let ch = (b'A' + i as u8) as char;
+    if i == 0 {
+        format!("{:^width$}", ch, width = width)
+    } else {
+        let inner_spaces = 2 * i - 1;
+        let line = format!("{}{}{}", ch, " ".repeat(inner_spaces), ch);
+        format!("{:^width$}", line, width = width)
+    }
+}
