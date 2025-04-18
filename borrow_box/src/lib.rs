@@ -28,4 +28,21 @@ impl GameSession {
             (name2.clone(), *score2)
         }
     }
+
+    pub fn update_score(&mut self, user_name: String) {
+        let score1 = self.p1.1;
+        let score2 = self.p2.1;
+        let max_score = self.nb_games / 2 + 1;
+
+        // Game finished?
+        if score1 >= max_score || score2 >= max_score {
+            return;
+        }
+
+        if self.p1.0 == user_name {
+            self.p1.1 += 1;
+        } else if self.p2.0 == user_name {
+            self.p2.1 += 1;
+        }
+    }
 }
