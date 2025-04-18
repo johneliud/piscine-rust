@@ -15,4 +15,17 @@ impl GameSession {
             nb_games,
         })
     }
+
+    pub fn read_winner(&self) -> (String, u16) {
+        let (name1, score1) = &self.p1;
+        let (name2, score2) = &self.p2;
+
+        if score1 == score2 {
+            ("Same score! tied".to_string(), *score1)
+        } else if score1 > score2 {
+            (name1.clone(), *score1)
+        } else {
+            (name2.clone(), *score2)
+        }
+    }
 }
