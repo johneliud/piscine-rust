@@ -45,4 +45,8 @@ impl GameSession {
             self.p2.1 += 1;
         }
     }
+
+    pub fn delete(self) -> String {
+        format!("game deleted: id -> {}", self.id)
+    }
 }
