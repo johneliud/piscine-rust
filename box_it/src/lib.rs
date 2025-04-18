@@ -14,3 +14,7 @@ pub fn transform_and_save_on_heap(s: String) -> Box<Vec<u32>> {
 
     Box::new(nums)
 }
+
+pub fn take_value_ownership(a: Box<Vec<u32>>) -> Vec<u32> {
+    *a
+}
