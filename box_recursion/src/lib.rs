@@ -25,4 +25,13 @@ impl WorkEnvironment {
         };
         self.grade = Some(Box::new(new_worker));
     }
+
+    pub fn remove_worker(&mut self) -> Option<String> {
+        if let Some(mut worker) = self.grade.take() {
+            self.grade = worker.next.take(); // move to the next worker
+            Some(worker.name)
+        } else {
+            None
+        }
+    }
 }
