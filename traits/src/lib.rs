@@ -26,6 +26,8 @@ pub trait Food {
     fn gives(&self) -> f64;
 }
 
-impl Food for Fruit {}
+impl Food for Fruit {
+}
 
-impl Food for Meat {}
+impl Food for Meat {
+}
