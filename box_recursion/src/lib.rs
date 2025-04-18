@@ -34,4 +34,12 @@ impl WorkEnvironment {
             None
         }
     }
+
+    pub fn last_worker(&self) -> Option<(String, String)> {
+        if let Some(worker) = &self.grade {
+            Some((worker.name.clone(), worker.role.clone()))
+        } else {
+            None
+        }
+    }
 }
